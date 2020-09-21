@@ -204,4 +204,4 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 3
   amplitude: 3.5
-  speedMultiplier: 0.25
+  speedMultiplier: 0.5

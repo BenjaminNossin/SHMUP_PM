@@ -8,7 +8,6 @@ public class Wave : MonoBehaviour
     [Range(0f, 10f)] public float amplitude;
     [Range(0f, 1f)] public float speedMultiplier;
  
-    private float x, y;
     private Vector3 newPos; 
 
     private void Start()

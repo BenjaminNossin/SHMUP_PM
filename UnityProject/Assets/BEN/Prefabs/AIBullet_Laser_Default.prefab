@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7467784236694424064}
   - component: {fileID: 4620171486861196461}
-  - component: {fileID: 3879862108557543292}
+  - component: {fileID: 106624588520348986}
   - component: {fileID: 7865206662797707606}
-  - component: {fileID: -2744576616795085883}
+  - component: {fileID: 9055928038241813559}
   m_Layer: 0
-  m_Name: Bullet_follow_wave
+  m_Name: AIBullet_Laser_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7467784236694424065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.073959, y: -3.3895307, z: -2.8166313}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6603774, g: 0, b: 0.57396615, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aedd419fa67b05e479ee6d07645a1ef6, type: 3}
+  m_Color: {r: 0.20392156, g: 1, b: 0.97612697, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3879862108557543292
-CircleCollider2D:
+--- !u!61 &106624588520348986
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,8 +98,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &7865206662797707606
 Rigidbody2D:
   serializedVersion: 4
@@ -121,7 +131,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2744576616795085883
+--- !u!114 &9055928038241813559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,78 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7467784236694424065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9d3efa25eedcc48b057463b988b1ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 802bedec901d0ff4ba5a859abbd7acfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curveToFollow:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.15082453
-      value: 0.1
-      inSlope: -0.017622879
-      outSlope: -0.017622879
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.20555496
-    - serializedVersion: 3
-      time: 0.31602
-      value: -0.1
-      inSlope: -0.036072124
-      outSlope: -0.036072124
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.06784792
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.485978
-      value: 0.1
-      inSlope: 0.019542895
-      outSlope: 0.019542895
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.6158543
-      value: -0.1
-      inSlope: 0.026353095
-      outSlope: 0.026353095
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.06803106
-    - serializedVersion: 3
-      time: 0.8158044
-      value: 0.1
-      inSlope: -0.0027078094
-      outSlope: -0.0027078094
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0.64911604
-      outSlope: -0.64911604
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.1228898
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  duration: 3
-  amplitude: 3.5
-  speedMultiplier: 0.5
+  delayBeforeSelfDestroy: 1
+  entityToDamage: Player
+  damageAmount: 3

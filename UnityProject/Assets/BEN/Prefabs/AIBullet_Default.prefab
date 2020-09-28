@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7865206662797707606}
   - component: {fileID: 9055928038241813559}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: AIBullet_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,4 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeSelfDestroy: 1
   entityToDamage: Player
-  damageAmount: 3
+  damageAmount: 1

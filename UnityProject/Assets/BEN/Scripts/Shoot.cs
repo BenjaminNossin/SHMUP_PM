@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour
 
     // -- WARNING -- all the following is specific to the weapon, not the shooting mechanic. Move it somewhere else 
     [Space, SerializeField] private GameObject entityToShoot;
+    [SerializeField, Range(0f, 10f)] private float delayBeforeFirstShoot = 0.2f;
 
     [SerializeField, Range(2f, 50f)] private float bulletForce = 15f;
     [SerializeField, Range(0f, 10f)] private float delayBetweenFire = 0.2f;
@@ -31,7 +32,7 @@ public class Shoot : MonoBehaviour
     private void OnEnable()
     {
         if (shootOnEachEnable)
-            Invoke("ShootProjectile", delayBetweenFireOnEnable);
+            Invoke(nameof(ShootProjectile), delayBetweenFireOnEnable);
     }
 
     void Update()
@@ -61,7 +62,7 @@ public class Shoot : MonoBehaviour
 
         if (attacking && canShoot)
         {
-            ShootProjectile();
+            Invoke(nameof(ShootProjectile), delayBeforeFirstShoot);
             StartCoroutine(CoolDown());
         }
 

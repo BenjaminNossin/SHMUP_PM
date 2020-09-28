@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField, Range(0.5f, 3f)] private float delayBeforeSelfDestroy;
     [SerializeField] private string entityToDamage;
-    [SerializeField, Range((int)1f, (int)3f)] private int damageAmount;
+    [SerializeField, Range(1, 10)] private int damageAmount;
 
     private void OnEnable()
     {
@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag(entityToDamage))
         {
-            Health temp = GetComponent<Health>();
+            Health temp = collision.GetComponent<Health>();
             temp.LoseHP(damageAmount);
         }
     }

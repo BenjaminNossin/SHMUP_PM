@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327228504ce7a06419f7393058f69049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 3
+  MaxHP: 1
   deathDelay: 0.1
   invulnerable: 0
   dropOnDeath: 1
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 9218306941047605239}
   m_Layer: 0
   m_Name: AI_Manager_Basic_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

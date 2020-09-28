@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player_Screen_Limit : MonoBehaviour
 {
-    public Camera MainCamera;
+    public Camera MainCamera; // not used
     private Vector2 screenBounds;
     private float objectWidht;
     private float objectHeight;
-    [Range(-0.01f, -0.07f)] public float lowerbound = 0.06f;
+    [Range(-0.01f, -2f)] public float lowerbound = -1f; // changed from -0.06 to -1
 
     // Start is called before the first frame update
     void Start()

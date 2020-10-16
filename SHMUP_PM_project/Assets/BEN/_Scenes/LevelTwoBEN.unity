@@ -799,6 +799,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.89173317
       objectReference: {fileID: 0}
+    - target: {fileID: 4059499603051808668, guid: fc8bec8849e295f49954729790bb3823,
+        type: 3}
+      propertyPath: transfToTranslate.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059499603051808668, guid: fc8bec8849e295f49954729790bb3823,
+        type: 3}
+      propertyPath: transfToTranslate.Array.data[2]
+      value: 
+      objectReference: {fileID: 1614499569}
     - target: {fileID: 4059499603051808669, guid: fc8bec8849e295f49954729790bb3823,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -861,6 +871,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc8bec8849e295f49954729790bb3823, type: 3}
+--- !u!4 &1614499569 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 223217979, guid: fc8bec8849e295f49954729790bb3823,
+    type: 3}
+  m_PrefabInstance: {fileID: 1614499568}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1689167741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1519,6 +1535,9 @@ MonoBehaviour:
   HPGainMultiplier: 1
   canFade: 0
   playerData: {fileID: 11400000, guid: b876b3179d1d50b4f96761754354ebbd, type: 2}
+  pausePanel: {fileID: 0}
+  mainPanel: {fileID: 0}
+  paused: 0
 --- !u!114 &5286071054360798504
 MonoBehaviour:
   m_ObjectHideFlags: 0

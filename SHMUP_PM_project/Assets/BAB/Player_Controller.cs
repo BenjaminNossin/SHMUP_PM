@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public class Player_Controller : MonoBehaviour
     public float moveSpeed = 10f;
 
     public static int maxHealth = 10;
-    public int currentHealth;
+    private int currentHealth;
 
     public Player_HealthBar healthBar;
     public Life_Counter lifeCounter;

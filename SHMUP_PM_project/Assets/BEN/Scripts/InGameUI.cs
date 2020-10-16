@@ -18,8 +18,11 @@ public class InGameUI : MonoBehaviour
     public static bool trackDone = false;
     public bool canFade = false;
 
-    public PlayerScore playerData; 
-   
+    public PlayerScore playerData;
+    public GameObject pausePanel;
+    public GameObject mainPanel;
+
+    public bool paused = false; 
 
     public void OnEnable()
     {
@@ -31,7 +34,9 @@ public class InGameUI : MonoBehaviour
         currentScore = 0;
         currentCeilTracker = 0;
         TMPScore.text = $"Score : {currentScore}";
-        StartCoroutine(StartFade()); 
+        StartCoroutine(StartFade());
+        pausePanel.SetActive(paused);
+        mainPanel.SetActive(!paused); 
     }
 
     private void FixedUpdate()
@@ -49,6 +54,35 @@ public class InGameUI : MonoBehaviour
             trackDone = true; 
             OnScoreCeilReach(scoreCeilTracker * HPGainMultiplier); // each new ceil add a bigger amount of HP; 
             currentCeilTracker = scoreCeilTracker; 
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) && !paused)
+        {
+            paused = !paused;
+            pausePanel.SetActive(paused);
+            mainPanel.SetActive(!paused);
+            StartCoroutine(ResetBool());
+            Time.timeScale = 0f; 
+
+        }
+
+    }
+
+    IEnumerator ResetBool()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+
+        for (int i = 0; i < 10000; i++)
+        {
+            yield return new WaitForSecondsRealtime(0.01f);
+            if (Input.GetKeyDown(KeyCode.A) && paused)
+            {
+                paused = !paused;
+                pausePanel.SetActive(paused);
+                mainPanel.SetActive(!paused);
+                Time.timeScale = 1f;
+                i = 10000; 
+            }
         }
     }
 

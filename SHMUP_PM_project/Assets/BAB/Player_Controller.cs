@@ -16,7 +16,7 @@ public class Player_Controller : MonoBehaviour
     public bool invulnerable = false; 
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         currentHealth = maxHealth;
     }

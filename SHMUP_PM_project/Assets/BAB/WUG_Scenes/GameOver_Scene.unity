@@ -284,7 +284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 895764328}
-        m_MethodName: Quit
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -414,7 +414,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 895764328}
-        m_MethodName: RetryButton
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 895764323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac305fc5eb452f14ab05f35c55625c71, type: 3}
+  m_Script: {fileID: 11500000, guid: fe1f49533b29a5246b2200f0bd02b492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1089966694

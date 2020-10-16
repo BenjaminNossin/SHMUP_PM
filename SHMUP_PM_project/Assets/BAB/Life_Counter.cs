@@ -3,8 +3,13 @@ using UnityEngine.UI;
 
 public class Life_Counter : MonoBehaviour
 {
-    public static int lifeValue = 10;
+    public static int lifeValue;
     public Text life;
+
+    public void OnEnable()
+    {
+        lifeValue = 5; 
+    }
 
     void Start()
     {

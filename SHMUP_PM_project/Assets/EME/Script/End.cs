@@ -4,7 +4,12 @@ public class End : MonoBehaviour
 {
     public void Retry()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LevelOneBEN");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(); 
     }
 }
 

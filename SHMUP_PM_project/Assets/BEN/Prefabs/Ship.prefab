@@ -42,10 +42,11 @@ GameObject:
   - component: {fileID: 2174185328103508033}
   - component: {fileID: 2174185328103508044}
   - component: {fileID: 2174185328103508045}
-  - component: {fileID: 2174185328103508032}
+  - component: {fileID: 1717555432285305702}
   - component: {fileID: 2174185328103508039}
   - component: {fileID: 2174185328103508035}
   - component: {fileID: 581928563}
+  - component: {fileID: 5955776512273809548}
   m_Layer: 9
   m_Name: Ship
   m_TagString: Player
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0015066117, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,21 +164,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6233423, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2174185328103508032
-MonoBehaviour:
+--- !u!95 &1717555432285305702
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2174185328103508038}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e987d0701afc2742ba2fd22f468fa94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f842ea027a593d64b8dc44da638d9a48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2174185328103508039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +230,20 @@ MonoBehaviour:
   invulnerable: 1
   dropOnDeath: 0
   playerHP: 1
+--- !u!114 &5955776512273809548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174185328103508038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49661d1be456ea041bec2920380ded46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  healthBar: {fileID: 0}
+  lifeCounter: {fileID: 0}
+  animator: {fileID: 1717555432285305702}
+  invulnerable: 0

@@ -537,6 +537,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b589d793c8a6e2f43badb4834f94109d, type: 3}
+--- !u!114 &907794500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8621595425862321196, guid: 9b1be872533cea74185b4a3fde80851b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5286071052751237444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d477d4a5966faf0468cd7be223137dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1090347767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,6 +1029,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e72518532b619c2458ebed8771cca9d4, type: 3}
+--- !u!114 &1741494396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7461684407408209568, guid: 9b1be872533cea74185b4a3fde80851b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5286071052751237444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6535a39136acc438c3768cb9655245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1757565237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1435,6 +1459,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7705964970213783864, guid: fc8bec8849e295f49954729790bb3823,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 907794500}
+    - target: {fileID: 7705964970213783864, guid: fc8bec8849e295f49954729790bb3823,
+        type: 3}
+      propertyPath: lifeCounter
+      value: 
+      objectReference: {fileID: 1741494396}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc8bec8849e295f49954729790bb3823, type: 3}
 --- !u!1001 &5286071052751237444

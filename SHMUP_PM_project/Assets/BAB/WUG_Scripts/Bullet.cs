@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -24,8 +25,17 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag(entityToDamage))
         {
-            Health temp = collision.GetComponent<Health>();
-            temp.LoseHP(damageAmount);
+            if (entityToDamage == "Enemy")
+            {
+                Health temp = collision.GetComponent<Health>();
+                temp.LoseHP(damageAmount);
+            }
+            else if (entityToDamage == "Player")
+            {
+                Player_Controller tempController = collision.GetComponent<Player_Controller>();
+                tempController.TakeDamage(damageAmount); 
+            }
+
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8972774668787657104}
   - component: {fileID: 8972774668787657105}
   - component: {fileID: 8972774668787657102}
-  - component: {fileID: 8972774668787657103}
+  - component: {fileID: 5613913849398021595}
   m_Layer: 0
   m_Name: EndOfLevel
   m_TagString: Untagged
@@ -80,7 +80,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 5}
   m_EdgeRadius: 0
---- !u!114 &8972774668787657103
+--- !u!114 &5613913849398021595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,3 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdf5c3c441ac154284d58692101056d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoTranslate: {fileID: 0}
+  nextLevel: {fileID: 0}
+  bossLevel: 0

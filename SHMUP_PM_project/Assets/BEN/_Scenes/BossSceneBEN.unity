@@ -280,6 +280,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5613913849398021595, guid: 9df94a295935b9b4b84a5e5b08253eab,
+        type: 3}
+      propertyPath: bossLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613913849398021595, guid: 9df94a295935b9b4b84a5e5b08253eab,
+        type: 3}
+      propertyPath: autoTranslate
+      value: 
+      objectReference: {fileID: 608817184}
     - target: {fileID: 8972774668787657104, guid: 9df94a295935b9b4b84a5e5b08253eab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,6 +456,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 322219066645632692, guid: 9b1be872533cea74185b4a3fde80851b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1027002964367695982, guid: 9b1be872533cea74185b4a3fde80851b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -455,6 +470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286071052800249585, guid: 9b1be872533cea74185b4a3fde80851b,
+        type: 3}
+      propertyPath: m_text
+      value: BOSS LEVEL
       objectReference: {fileID: 0}
     - target: {fileID: 5286071053274932016, guid: 9b1be872533cea74185b4a3fde80851b,
         type: 3}

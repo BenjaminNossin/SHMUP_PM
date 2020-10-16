@@ -6,10 +6,26 @@ public class EndOfLevel : MonoBehaviour
 {
     AsyncOperation asyncOp;
     private bool playerDetected = false;
+    public AutoTranslate autoTranslate;
+    public GameObject nextLevel;
+
+    public bool bossLevel = false; 
 
     private void OnEnable()
     {
-        BasicAIBrain.OnBossDeath += LoadWinScreen; 
+        if (bossLevel)
+            BasicAIBrain.OnBossDeath += LoadWinScreen; 
+
+        if(SceneManager.GetActiveScene().buildIndex > 1 && SceneManager.GetActiveScene().buildIndex < 5)
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1); 
+        }
+    }
+
+    private void Start()
+    {
+        if (!bossLevel)
+            nextLevel.SetActive(false); 
     }
 
     public void FixedUpdate()
@@ -22,9 +38,17 @@ public class EndOfLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
-            asyncOp.allowSceneActivation = false;
-            playerDetected = true; 
+            autoTranslate.enabled = false;
+
+            if (!bossLevel)
+                nextLevel.SetActive(true); 
+
+            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+                asyncOp.allowSceneActivation = false;
+                playerDetected = true; 
+            }
         }
     }
 
@@ -33,7 +57,6 @@ public class EndOfLevel : MonoBehaviour
         if (asyncOp.progress >= 0.9f)
         {
             asyncOp.allowSceneActivation = true;
-            StartCoroutine(UnloadScene());
         }
     }
 
@@ -46,18 +69,19 @@ public class EndOfLevel : MonoBehaviour
         if (asyncOp.progress >= 0.9f)
         {
             asyncOp.allowSceneActivation = true;
-            StartCoroutine(UnloadScene());
+            StartCoroutine(UnloadBossScene()); 
         }
     }
 
-    IEnumerator UnloadScene()
+    IEnumerator UnloadBossScene()
     {
-        yield return new WaitForFixedUpdate();
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene(), UnloadSceneOptions.None); 
+        yield return new WaitForFixedUpdate(); 
+        SceneManager.UnloadSceneAsync("BossSceneBEN", UnloadSceneOptions.None); 
     }
 
     private void OnDisable()
     {
-        BasicAIBrain.OnBossDeath -= LoadWinScreen;
+        if (bossLevel)
+            BasicAIBrain.OnBossDeath -= LoadWinScreen;
     }
 }

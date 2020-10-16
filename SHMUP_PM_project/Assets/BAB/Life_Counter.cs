@@ -8,7 +8,7 @@ public class Life_Counter : MonoBehaviour
 
     public void OnEnable()
     {
-        lifeValue = 5; 
+        lifeValue = 99; 
     }
 
     void Start()

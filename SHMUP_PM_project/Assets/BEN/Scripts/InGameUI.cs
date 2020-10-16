@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class InGameUI : MonoBehaviour
@@ -15,7 +16,9 @@ public class InGameUI : MonoBehaviour
 
     public static Action<int> OnScoreCeilReach;
     public static bool trackDone = false;
-    public bool canFade = false; 
+    public bool canFade = false;
+
+    public PlayerScore playerData; 
    
 
     public void OnEnable()
@@ -64,5 +67,7 @@ public class InGameUI : MonoBehaviour
     public void OnDisable()
     {
         Health.OnAIDeath -= UpdateScore;
+        PlayerScore.playerScore += currentScore;
+        EditorUtility.SetDirty(playerData); 
     }
 }

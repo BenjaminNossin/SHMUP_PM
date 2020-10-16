@@ -89,6 +89,8 @@ public class Health : MonoBehaviour
     public void OnDisable()
     {
         if (playerHP)
+        {
             InGameUI.OnScoreCeilReach -= AddHP;
+        }
     }
 }

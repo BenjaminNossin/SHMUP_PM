@@ -9,7 +9,7 @@ public class EndOfLevel : MonoBehaviour
 
     private void OnEnable()
     {
-        BasicAIBrain.OnBossDeath += ManageNextLevel; 
+        BasicAIBrain.OnBossDeath += LoadWinScreen; 
     }
 
     public void FixedUpdate()
@@ -37,6 +37,19 @@ public class EndOfLevel : MonoBehaviour
         }
     }
 
+    void LoadWinScreen()
+    {
+        asyncOp = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+        asyncOp.allowSceneActivation = false;
+        playerDetected = true;
+
+        if (asyncOp.progress >= 0.9f)
+        {
+            asyncOp.allowSceneActivation = true;
+            StartCoroutine(UnloadScene());
+        }
+    }
+
     IEnumerator UnloadScene()
     {
         yield return new WaitForFixedUpdate();
@@ -45,6 +58,6 @@ public class EndOfLevel : MonoBehaviour
 
     private void OnDisable()
     {
-        BasicAIBrain.OnBossDeath -= ManageNextLevel;
+        BasicAIBrain.OnBossDeath -= LoadWinScreen;
     }
 }

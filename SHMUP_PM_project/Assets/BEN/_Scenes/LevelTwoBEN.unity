@@ -950,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 8972774668787657104, guid: 9df94a295935b9b4b84a5e5b08253eab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.7
+      value: 67.1
       objectReference: {fileID: 0}
     - target: {fileID: 8972774668787657104, guid: 9df94a295935b9b4b84a5e5b08253eab,
         type: 3}
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1517,6 +1517,8 @@ MonoBehaviour:
   TMPLevel: {fileID: 5286071053761202411}
   scoreCeil: 20
   HPGainMultiplier: 1
+  canFade: 0
+  playerData: {fileID: 11400000, guid: b876b3179d1d50b4f96761754354ebbd, type: 2}
 --- !u!114 &5286071054360798504
 MonoBehaviour:
   m_ObjectHideFlags: 0

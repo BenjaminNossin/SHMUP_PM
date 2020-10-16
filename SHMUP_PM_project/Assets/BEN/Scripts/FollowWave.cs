@@ -19,15 +19,11 @@ public class FollowWave : MonoBehaviour
     bool attacking;
     private bool canShoot = true;
 
-    private void OnEnable()
-    {
-        InvokeRepeating(nameof(ShootProjectile), 0f, delayBetweenFireOnEnable);
-    }
-
     void Update()
     {
         if (!automated)
         {
+            Debug.Log($"attacking as not automated");
             attacking = Input.GetMouseButton(0);
             if (attacking && canShoot)
             {
@@ -50,6 +46,8 @@ public class FollowWave : MonoBehaviour
 
         if (attacking && canShoot)
         {
+            Debug.Log("wave shooting");
+            Debug.Log($"attacking is {attacking}"); 
             ShootProjectile();
             StartCoroutine(CoolDown());
         }

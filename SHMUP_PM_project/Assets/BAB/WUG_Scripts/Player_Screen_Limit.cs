@@ -1,30 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player_Screen_Limit : MonoBehaviour
 {
-    public Camera MainCamera; // not used
-    private Vector2 screenBounds;
-    private float objectWidht;
-    private float objectHeight;
-    [Range(-0.01f, -2f)] public float lowerbound = -1f; // changed from -0.06 to -1
+    public BoxCollider2D screenLimit; 
 
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        objectWidht = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
-
-    }
-
-    // Update is called once per frame
-    void LateUpdate()
-    {
-        Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidht, screenBounds.x - objectWidht);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * lowerbound + objectHeight, screenBounds.y - objectHeight);
-        transform.position = viewPos;
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, screenLimit.bounds.min.x, screenLimit.bounds.max.x),
+                                         Mathf.Clamp(transform.position.y, screenLimit.bounds.min.y, screenLimit.bounds.max.y)); 
     }
 }

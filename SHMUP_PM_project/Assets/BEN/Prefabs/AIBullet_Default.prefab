@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4620171486861196461}
   - component: {fileID: 3879862108557543292}
   - component: {fileID: 7865206662797707606}
-  - component: {fileID: 9055928038241813559}
+  - component: {fileID: -2628038423231160860}
   m_Layer: 0
   m_Name: AIBullet_Default
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 0.38018355, b: 0.2028302, a: 1}
   m_FlipX: 0
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9055928038241813559
+--- !u!114 &-2628038423231160860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7467784236694424065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802bedec901d0ff4ba5a859abbd7acfc, type: 3}
+  m_Script: {fileID: 11500000, guid: d53269a52f23f5045897fb9296335246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeSelfDestroy: 1
+  delayBeforeSelfDestroy: 2
   entityToDamage: Player
   damageAmount: 1
+  speed: 20
+  rb: {fileID: 0}

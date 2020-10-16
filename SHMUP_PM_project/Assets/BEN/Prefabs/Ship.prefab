@@ -205,8 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d8c84d1404620449133c4279306fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  lowerbound: -1
+  screenLimit: {fileID: 0}
 --- !u!114 &581928563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +222,4 @@ MonoBehaviour:
   deathDelay: 0.1
   invulnerable: 1
   dropOnDeath: 0
+  playerHP: 1

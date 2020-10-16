@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class InGameUI : MonoBehaviour
 {
-    public TMP_Text TMPSCore;
+    public TMP_Text TMPScore;
+    public TMP_Text TMPLevel;
     private int currentScore;
     [Range(2, 100)] public int scoreCeil = 50;
     [Range(1, 3)] public int HPGainMultiplier = 2;
@@ -12,7 +14,9 @@ public class InGameUI : MonoBehaviour
     private int currentCeilTracker; 
 
     public static Action<int> OnScoreCeilReach;
-    public static bool trackDone = false; 
+    public static bool trackDone = false;
+    public bool canFade = false; 
+   
 
     public void OnEnable()
     {
@@ -23,7 +27,14 @@ public class InGameUI : MonoBehaviour
     {
         currentScore = 0;
         currentCeilTracker = 0;
-        TMPSCore.text = $"Score : {currentScore}";
+        TMPScore.text = $"Score : {currentScore}";
+        StartCoroutine(StartFade()); 
+    }
+
+    private void FixedUpdate()
+    {
+        if (canFade && TMPLevel.color.a > 0f)
+            TMPLevel.color = new Vector4(1f, 1f, 1f, TMPLevel.color.a - Time.fixedDeltaTime * 1f);
     }
 
     private void Update()
@@ -38,10 +49,16 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    IEnumerator StartFade()
+    {
+        yield return new WaitForSeconds(1f);
+        canFade = true; 
+    }
+
     void UpdateScore(int scoreToAdd)
     {
         currentScore += scoreToAdd; 
-        TMPSCore.text = $"Score : {currentScore}";      
+        TMPScore.text = $"Score : {currentScore}";      
     }
 
     public void OnDisable()

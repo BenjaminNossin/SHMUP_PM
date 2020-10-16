@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 6396130096704023821}
   - component: {fileID: 6396130096704023820}
   - component: {fileID: 6396130096704023819}
+  - component: {fileID: 5412523633236710029}
   m_Layer: 0
   m_Name: Enemy_version2
   m_TagString: Enemy
@@ -345,7 +346,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01084137, y: 0.112749815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -356,7 +357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1.3487613, y: 1.4138091}
   m_EdgeRadius: 0
 --- !u!114 &6396130096704023818
 MonoBehaviour:
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackTreshold: 20
   zone: {fileID: 0}
-  delay: 10
+  delay: 0.5
 --- !u!114 &6396130096704023823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +483,7 @@ MonoBehaviour:
   deathDelay: 0.1
   invulnerable: 0
   dropOnDeath: 1
+  playerHP: 0
 --- !u!114 &6396130096704023819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +499,19 @@ MonoBehaviour:
   killableEntitiesTag:
   - Player
   destructionDelay: 0
+--- !u!114 &5412523633236710029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396130096704023813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6b98ee60e0cca47b031e4ea0cf0275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCount: 10
 --- !u!1 &6396130097145158398
 GameObject:
   m_ObjectHideFlags: 0

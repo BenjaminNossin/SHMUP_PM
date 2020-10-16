@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BEN/_Scenes/LevelOneBEN.unity
+    guid: 977feea2088527248826a3469270c837
+  - enabled: 1
+    path: Assets/BEN/_Scenes/LevelTwoBEN.unity
+    guid: 2b84b17377572d84d97b4a20a13555ad
+  - enabled: 1
+    path: Assets/BEN/_Scenes/LevelThreeBEN.unity
+    guid: dba6f8e4a66894a4487fa0ef1d8746fa
+  - enabled: 1
+    path: Assets/BEN/_Scenes/BossSceneBEN.unity
+    guid: 18c05bc08da8a37429d70373dd266c94
+  - enabled: 1
+    path: Assets/BEN/_Scenes/WinScene.unity
+    guid: e32dbb66a8047fc45876591f59a991ed
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ea1de15ac50e6b94480bfa5205f87e99,
       type: 2}

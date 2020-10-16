@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 3699304122184375434}
   - component: {fileID: 3699304122184375437}
   - component: {fileID: 3699304122184375487}
+  - component: {fileID: 1150023913}
   m_Layer: 0
   m_Name: Enemy_version3
   m_TagString: Enemy
@@ -127,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3699304122184375427}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4.46, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3699304122563930371}
@@ -218,7 +219,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.008673072, y: 0.023850799}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1.3530979, y: 1.3314164}
   m_EdgeRadius: 0
 --- !u!114 &3699304122184375436
 MonoBehaviour:
@@ -243,8 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91c797a9544a8e49997c02df34c2342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  attackTreshold: 20
+  attackTreshold: 19
+  zone: {fileID: 0}
+  delay: 0.2
 --- !u!114 &3699304122184375433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +304,7 @@ MonoBehaviour:
   deathDelay: 0.1
   invulnerable: 0
   dropOnDeath: 1
+  playerHP: 0
 --- !u!114 &3699304122184375437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +340,19 @@ MonoBehaviour:
     type: 3}
   delayBetweenFire: 1
   delayBetweenFireOnEnable: 1
+--- !u!114 &1150023913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699304122184375427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6b98ee60e0cca47b031e4ea0cf0275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCount: 5
 --- !u!1 &3699304122563930372
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3699304122610084728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.72, y: -0.7399998, z: -2.8166313}
+  m_LocalPosition: {x: -3.8, y: -0.7399998, z: -2.8166313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3699304121543561049}

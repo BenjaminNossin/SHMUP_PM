@@ -1,15 +1,27 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [Range(1f, 60f)] public int MaxHP = 3;
+    [Range(1f, 100f)] public int MaxHP = 3;
     public int CurrentHP { get; set; }
 
     [Range(0.05f, 2f)] public float deathDelay = 0.1f;
     UnityEngine.Object self;
     public bool invulnerable = false;
     public bool dropOnDeath = false;
+
+    public static Action<int> OnAIDeath;
+    private bool done = false;
+
+    public bool playerHP = false;
+
+    public void OnEnable()
+    {
+        if (playerHP)
+            InGameUI.OnScoreCeilReach += AddHP; 
+    }
 
     private void Awake()
     {
@@ -24,7 +36,7 @@ public class Health : MonoBehaviour
 
     public void Death()
     {
-        if (dropOnDeath)
+        if (dropOnDeath && !done)
         {
             try
             {
@@ -48,15 +60,35 @@ public class Health : MonoBehaviour
                 Debug.LogError("No randomDrop component found");
             }
 
+            try
+            {
+                int score = GetComponent<Score>().scoreCount;
+                OnAIDeath(score); 
+            }
+            catch (Exception) { }
+
         }
 
         self = transform.gameObject;
         Destroy(gameObject, deathDelay);
         self = null;
+        done = true; 
     }
 
     public void LoseHP(int amount)
     {
         CurrentHP -= amount;
+    }
+
+    public void AddHP(int amount)
+    {
+        CurrentHP += amount;
+        MaxHP = CurrentHP;
+    }
+
+    public void OnDisable()
+    {
+        if (playerHP)
+            InGameUI.OnScoreCeilReach -= AddHP;
     }
 }

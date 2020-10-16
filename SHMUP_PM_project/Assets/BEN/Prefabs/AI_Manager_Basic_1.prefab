@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 9218306939622209658}
   - component: {fileID: 9218306939622209659}
   - component: {fileID: 9218306939622209660}
+  - component: {fileID: 2197915735216100655}
   m_Layer: 0
   m_Name: Enemy_version1
   m_TagString: Enemy
@@ -210,8 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91c797a9544a8e49997c02df34c2342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   attackTreshold: 20
+  zone: {fileID: 0}
+  delay: 0.2
 --- !u!114 &9218306939622209656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,7 @@ MonoBehaviour:
   - {fileID: 9218306939640140265}
   entityToShoot: {fileID: 7467784236694424065, guid: a76a8d1579e4ba146bab88550d042319,
     type: 3}
+  delayBeforeFirstShoot: 0.2
   bulletForce: 8
   delayBetweenFire: 1
   delayBetweenFireOnEnable: 0.5
@@ -309,6 +312,18 @@ MonoBehaviour:
   killableEntitiesTag:
   - Player
   destructionDelay: 0
+--- !u!114 &2197915735216100655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218306939622209650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6b98ee60e0cca47b031e4ea0cf0275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9218306939640140264
 GameObject:
   m_ObjectHideFlags: 0
